@@ -1,156 +1,238 @@
 # 🌱 مزارع جو | Muzare3 JO
 
-**AI decision agent for agricultural investment in Jordan.**
- 
-مزارع جو helps farm owners make better decisions about:
+**An Arabic AI decision agent for agricultural investment in Jordan.**
 
-- 🌾 What crops to plant
-- 💧 Water consumption
-- 💰 Budget allocation
-- 📈 Estimated financial margin
-- 🏪 Market prices in Amman and Irbid
+Built for **AI Quest 2026 🇯🇴**.
 
-Built for **AI Quest 2026**.
+مزارع جو helps farm owners compare crops, allocate their budget, estimate water needs, and understand potential financial margins using Jordanian agricultural and market data.
 
 ---
 
-## What is مزارع جو?
+## What does it do?
 
-Most agricultural assistants answer questions like:
+مزارع جو helps answer:
 
-> "How do I grow tomatoes?"
+> **“What should I plant with my land and budget?”**
 
-مزارع جو focuses on a different question:
+The system combines an AI agent with a deterministic optimizer to calculate farm plans and explain them in Arabic.
 
-> **"What should I plant with the land, budget and water I have?"**
-
-The system combines agricultural data with an AI agent and a deterministic optimizer to generate a practical farm investment plan.
-
-The LLM does not invent the crop allocation. The optimizer calculates it, and the AI explains the result in Arabic.
+**The optimizer calculates crop allocation and financial estimates. The AI explains the results.**
 
 ---
 
 ## Features
 
-- Arabic AI agricultural decision agent
-- Automatic crop comparison
-- Budget-aware crop planning
-- Water-efficiency comparison
-- Balanced plan vs highest-margin plan
+- Arabic conversational agricultural assistant
+- Automatic comparison of supported crops
+- Budget-aware crop allocation
+- Balanced, highest-margin, and best-water-efficiency plans
+- Estimated production and water consumption
+- Estimated planning margin and remaining budget
+- Market price comparison between Amman and Irbid
 - Live weather information
-- Amman and Irbid market comparison
-- Conversation memory
-- Interactive dashboard and charts
-- Designed around Jordanian agricultural data
+- Conversation memory during the server session
+- Dashboard and charts based on actual optimizer results
 
 ---
 
 ## How it works
 
 ```text
-Farmer Question
-      ↓
-AI Agent
-      ↓
-Weather + Crop Data + Market Data
-      ↓
-Mathematical Optimizer
-      ↓
-Recommended Farm Plan
-      ↓
-Arabic Explanation + Dashboard
+Farm information + user question
+                ↓
+        LangGraph AI agent
+                ↓
+   Crop, market, and weather tools
+                ↓
+       Deterministic optimizer
+                ↓
+      Calculated planning options
+                ↓
+    Arabic explanation + dashboard
 ```
 
----
-
-## Tech Stack
-
-- Python
-- Django
-- LangGraph
-- Gemini
-- JavaScript
-- HTML / CSS
-- Open-Meteo
-- Jordan agricultural market data
+The agent calls tools as needed. Dashboard values come from the optimizer’s actual output.
 
 ---
 
-## Run the project
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Backend and API | Python + Django |
+| AI workflow | LangGraph |
+| Language model | Google Gemini |
+| Conversation memory | LangGraph MemorySaver |
+| Frontend | Django templates, HTML, CSS, vanilla JavaScript |
+| Charts | SVG and CSS using optimizer data |
+| Session storage | SQLite through Django |
+| Weather | Open-Meteo |
+| Agricultural and market data | Local JSON files |
+
+**One Django server runs the frontend, API, and existing AI agent.**
+
+---
+
+## Run locally
 
 ### 1. Install dependencies
 
+Requires **Python 3.10 or newer**.
+
+From the project folder:
+
 ```powershell
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-### 2. Create `.env`
+### 2. Configure your Gemini key
 
-Copy:
+Copy `.env.example` to `.env`:
 
-```text
-.env.example
+```powershell
+Copy-Item .env.example .env
 ```
 
-to:
-
-```text
-.env
-```
-
-Then add:
+Open `.env` and set:
 
 ```env
 GEMINI_API_KEY=your_key_here
 ```
 
-### 3. Start مزارع جو
+Keep your real `.env` private. It is excluded from Git.
 
-On Windows, run:
+### 3. Start the application
+
+On Windows, double-click:
 
 ```text
 START_MAZAREJO.bat
 ```
 
-The application will open automatically in your browser.
+Or run from PowerShell:
 
-The final application runs through one Django server.
+```powershell
+.\START_MAZAREJO.bat
+```
+
+Keep the terminal open. The browser opens automatically after the server passes its readiness checks.
+
+Local address:
+
+```text
+http://127.0.0.1:8765/ar/
+```
+
+Internet access and available Gemini quota are required for AI requests.
 
 ---
 
-## Example Question
+## Using the demo
 
-> عندي 100 دونم وميزانيتي 45 ألف دينار، وما بعرف شو أزرع. بدي أفضل خطة توازن بين الربح واستهلاك المياه، وقارنلي الأسعار بين سوق عمّان وإربد.
+1. Enter the farm location, land area, and seasonal budget.
+2. Optionally enter available water.
+3. Choose a planning goal and optionally select crops.
+4. Open the dashboard and ask for a farm plan.
+5. Compare the calculated plans using the plan selector.
 
-مزارع جو can compare available crops and produce:
+Land area must be a positive multiple of **10 dunums**, matching the current optimizer.
 
-- Land allocation
-- Estimated production
-- Water consumption
+### Example question
+
+> عندي 20 دونم وميزانيتي 10 آلاف دينار. بدي خطة توازن بين الهامش المالي واستهلاك المياه، وقارنلي أسعار محاصيل الخطة بين سوق عمّان وإربد.
+
+The result can include:
+
+- Crop allocation in dunums
+- Expected production
+- Estimated water consumption
 - Estimated planning margin
-- Remaining budget
+- Total cost and remaining budget
 - Market price comparison
 
----
-
-## Important Note
-
-The financial result is an **estimated planning margin**, not guaranteed net profit.
-
-Current market prices are reference snapshots, and production costs are reference values.
+Charts appear after an actual optimizer result is available.
 
 ---
 
-## Goal
+## Water and weather handling
 
-مزارع جو is not designed to replace agricultural experts.
+**Available water is optional.**
 
-Its goal is to help farm owners and agricultural investors combine:
+If left blank, the system can still calculate a plan and report its estimated water needs.
 
-**land + water + capital + crops + markets**
+If provided, the amount is passed to the agent as farm context. The current optimizer **does not enforce an available-water limit**.
 
-into one actionable decision.
+Live weather is supporting information. It does not currently change the optimizer’s calculations.
 
 ---
+
+## Conversation memory and restarting
+
+Each browser session uses a separate LangGraph conversation thread.
+
+Conversation memory lasts while the server process is running.
+
+To restart with a completely fresh demo:
+
+1. Press **Ctrl+C** in the server terminal.
+2. If prompted, enter **Y**.
+3. Run `START_MAZAREJO.bat` again.
+4. Refresh existing browser tabs.
+
+A real restart clears farm setup, crop selections, chat history, dashboard results, weather results, and old browser drafts.
+
+Opening the launcher while the server is already running reuses that process and does not reset it.
+
+The **محادثة جديدة** button resets the conversation and results while keeping farm inputs during the same server run.
+
+---
+
+## Project structure
+
+```text
+Agent.py             Existing LangGraph agent
+tools.py             Agricultural tools and optimizer
+crop_resources.json  Crop reference data
+market_prices.json   Market price snapshots
+
+config/              Django configuration
+dashboard/           API integration and page templates
+static/              Frontend scripts, styles, and assets
+tests/               Launcher and transformation tests
+
+START_MAZAREJO.bat   Windows launcher
+launch_demo.py       Startup and readiness checks
+requirements.txt    Current application dependencies
+```
+
+The earlier `api.py`, `frontend/`, and `requirements-api.txt` prototype files are retained but are not used by the current Django launcher.
+
+---
+
+## Verification
+
+```powershell
+python manage.py check
+python manage.py test dashboard
+python -m unittest discover -s tests -p test_launcher.py
+```
+
+Integration tests exercise the existing compiled graph and real optimizer with the language model mocked.
+
+---
+
+## Important limitations
+
+- Financial results are **estimated planning margins**, not guaranteed net profits.
+- Market prices are dated reference snapshots.
+- Production, water, and cost estimates depend on the available reference data.
+- Large land areas and many crop candidates can make the current exhaustive optimizer slow.
+- The local Django server is intended for demo use.
+
+مزارع جو supports agricultural decision-making. Local conditions and expert judgment remain essential.
+
+---
+
+**From farm data to a clearer investment decision.**
 
 ### AI Quest 2026 🇯🇴
