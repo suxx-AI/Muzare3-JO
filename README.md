@@ -1,4 +1,4 @@
-# 🌱 مزارع جو | Mazare3 JO
+# 🌱 مزارع جو | Muzare3 JO
 
 **AI decision agent for agricultural investment in Jordan.**
  
