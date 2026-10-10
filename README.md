@@ -1,7 +1,7 @@
 # 🌱 مزارع جو | Mazare3 JO
 
 **AI decision agent for agricultural investment in Jordan.**
-
+ 
 مزارع جو helps farm owners make better decisions about:
 
 - 🌾 What crops to plant
