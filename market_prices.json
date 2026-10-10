@@ -1,0 +1,230 @@
+{
+  "amman": {
+    "market": "Amman Central Market",
+    "report_date": "2026-10-07",
+    "source": "Jordan Ministry of Agriculture",
+    "price_unit": "JOD/kg",
+
+    "crops": {
+      "بندورة": {
+        "quantity_today_ton": 210,
+        "quantity_previous_day_ton": 284,
+        "daily_requirement_ton": 416,
+        "min_price_jod_per_kg": 0.07,
+        "max_price_jod_per_kg": 0.20,
+        "representative_price_jod_per_kg": 0.15,
+        "representative_price_method": "official_common_price"
+      },
+
+      "بندورة معلقة": {
+        "quantity_today_ton": 25,
+        "quantity_previous_day_ton": 48,
+        "daily_requirement_ton": null,
+        "min_price_jod_per_kg": 0.20,
+        "max_price_jod_per_kg": 0.40,
+        "representative_price_jod_per_kg": 0.30,
+        "representative_price_method": "official_common_price"
+      },
+
+      "بصل": {
+        "quantity_today_ton": 166,
+        "quantity_previous_day_ton": 279,
+        "daily_requirement_ton": 293,
+        "min_price_jod_per_kg": 0.20,
+        "max_price_jod_per_kg": 0.37,
+        "representative_price_jod_per_kg": 0.30,
+        "representative_price_method": "official_common_price"
+      },
+
+      "خيار": {
+        "quantity_today_ton": 186,
+        "quantity_previous_day_ton": 197,
+        "daily_requirement_ton": 322,
+        "min_price_jod_per_kg": 0.20,
+        "max_price_jod_per_kg": 0.40,
+        "representative_price_jod_per_kg": 0.30,
+        "representative_price_method": "official_common_price"
+      },
+
+      "بطاطا": {
+        "quantity_today_ton": 387,
+        "quantity_previous_day_ton": 362,
+        "daily_requirement_ton": 320,
+        "min_price_jod_per_kg": 0.20,
+        "max_price_jod_per_kg": 0.45,
+        "representative_price_jod_per_kg": 0.35,
+        "representative_price_method": "official_common_price"
+      },
+
+      "كوسا": {
+        "quantity_today_ton": 61,
+        "quantity_previous_day_ton": 59,
+        "daily_requirement_ton": 150,
+        "min_price_jod_per_kg": 0.70,
+        "max_price_jod_per_kg": 1.00,
+        "representative_price_jod_per_kg": 0.80,
+        "representative_price_method": "official_common_price"
+      },
+
+      "باذنجان": {
+        "quantity_today_ton": 86,
+        "quantity_previous_day_ton": 80,
+        "daily_requirement_ton": null,
+        "min_price_jod_per_kg": 0.10,
+        "max_price_jod_per_kg": 0.25,
+        "representative_price_jod_per_kg": 0.15,
+        "representative_price_method": "official_common_price",
+        "original_market_name": "أسود عجمي"
+      },
+
+      "زهرة": {
+        "quantity_today_ton": 90,
+        "quantity_previous_day_ton": 66,
+        "daily_requirement_ton": 150,
+        "min_price_jod_per_kg": 0.40,
+        "max_price_jod_per_kg": 0.85,
+        "representative_price_jod_per_kg": 0.60,
+        "representative_price_method": "official_common_price"
+      },
+
+      "ليمون محلي": {
+        "quantity_today_ton": 132,
+        "quantity_previous_day_ton": 147,
+        "daily_requirement_ton": 134,
+        "min_price_jod_per_kg": 0.50,
+        "max_price_jod_per_kg": 1.00,
+        "representative_price_jod_per_kg": 0.75,
+        "representative_price_method": "official_common_price"
+      },
+
+      "ثوم": {
+        "quantity_today_ton": 4,
+        "quantity_previous_day_ton": 12,
+        "daily_requirement_ton": 15,
+        "min_price_jod_per_kg": 1.50,
+        "max_price_jod_per_kg": 2.25,
+        "representative_price_jod_per_kg": 2.00,
+        "representative_price_method": "official_common_price"
+      },
+
+      "موز بلدي": {
+        "quantity_today_ton": 91,
+        "quantity_previous_day_ton": 72,
+        "daily_requirement_ton": null,
+        "min_price_jod_per_kg": 0.55,
+        "max_price_jod_per_kg": 0.85,
+        "representative_price_jod_per_kg": 0.70,
+        "representative_price_method": "official_common_price",
+        "original_market_name": "موز بلدي قطوف"
+      },
+
+      "تفاح محلي": {
+        "quantity_today_ton": 105,
+        "quantity_previous_day_ton": 82,
+        "daily_requirement_ton": 188,
+        "min_price_jod_per_kg": 0.80,
+        "max_price_jod_per_kg": 1.40,
+        "representative_price_jod_per_kg": 1.00,
+        "representative_price_method": "official_common_price"
+      }
+    }
+  },
+
+  "irbid": {
+    "market": "Irbid Central Market",
+    "report_date": "2026-10-06",
+    "source": "Irbid Central Market report via Petra / Al Wakeel",
+    "price_unit": "JOD/kg",
+
+    "market_totals": {
+      "total_arrivals_ton": 1421,
+      "vegetables_ton": 683,
+      "fruits_ton": 163,
+      "leafy_vegetables_ton": 34
+    },
+
+    "crops": {
+      "بندورة": {
+        "quantity_today_ton": null,
+        "daily_requirement_ton": null,
+        "min_price_jod_per_kg": 0.12,
+        "max_price_jod_per_kg": 0.20,
+        "representative_price_jod_per_kg": 0.16,
+        "representative_price_method": "midpoint_of_reported_range"
+      },
+
+      "خيار": {
+        "quantity_today_ton": null,
+        "daily_requirement_ton": null,
+        "min_price_jod_per_kg": 0.15,
+        "max_price_jod_per_kg": 0.25,
+        "representative_price_jod_per_kg": 0.20,
+        "representative_price_method": "midpoint_of_reported_range"
+      },
+
+      "بطاطا": {
+        "quantity_today_ton": null,
+        "daily_requirement_ton": null,
+        "min_price_jod_per_kg": 0.20,
+        "max_price_jod_per_kg": 0.42,
+        "representative_price_jod_per_kg": 0.31,
+        "representative_price_method": "midpoint_of_reported_range"
+      },
+
+      "بصل": {
+        "quantity_today_ton": null,
+        "daily_requirement_ton": null,
+        "min_price_jod_per_kg": 0.18,
+        "max_price_jod_per_kg": 0.30,
+        "representative_price_jod_per_kg": 0.24,
+        "representative_price_method": "midpoint_of_reported_range"
+      },
+
+      "ثوم": {
+        "quantity_today_ton": null,
+        "daily_requirement_ton": null,
+        "min_price_jod_per_kg": 1.50,
+        "max_price_jod_per_kg": 2.50,
+        "representative_price_jod_per_kg": 2.00,
+        "representative_price_method": "midpoint_of_reported_range"
+      },
+
+      "باذنجان": {
+        "quantity_today_ton": null,
+        "daily_requirement_ton": null,
+        "min_price_jod_per_kg": 0.10,
+        "max_price_jod_per_kg": 0.18,
+        "representative_price_jod_per_kg": 0.14,
+        "representative_price_method": "midpoint_of_reported_range",
+        "original_market_name": "الباذنجان الأسود العجمي"
+      },
+
+      "زهرة": {
+        "quantity_today_ton": null,
+        "daily_requirement_ton": null,
+        "min_price_jod_per_kg": 0.20,
+        "max_price_jod_per_kg": 0.35,
+        "representative_price_jod_per_kg": 0.275,
+        "representative_price_method": "midpoint_of_reported_range"
+      },
+
+      "بطيخ": {
+        "quantity_today_ton": null,
+        "daily_requirement_ton": null,
+        "min_price_jod_per_kg": 0.12,
+        "max_price_jod_per_kg": 0.26,
+        "representative_price_jod_per_kg": 0.19,
+        "representative_price_method": "midpoint_of_reported_range"
+      },
+
+      "شمام": {
+        "quantity_today_ton": null,
+        "daily_requirement_ton": null,
+        "min_price_jod_per_kg": 0.15,
+        "max_price_jod_per_kg": 0.30,
+        "representative_price_jod_per_kg": 0.225,
+        "representative_price_method": "midpoint_of_reported_range"
+      }
+    }
+  }
+}

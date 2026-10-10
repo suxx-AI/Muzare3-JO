@@ -1,0 +1,211 @@
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+msgid "Mazare JO — Smart Farm Assistant"
+msgstr "مزارع JO — المساعد الزراعي الذكي"
+
+msgid "مزارع JO"
+msgstr "مزارع JO"
+
+msgid "Your smart assistant for better profit and less water use"
+msgstr "مساعدك الذكي لزيادة الأرباح وتقليل استهلاك المياه"
+
+msgid "My farm"
+msgstr "مزرعتي"
+
+msgid "Preparing your farm dashboard…"
+msgstr "جارٍ تجهيز لوحة تحكم مزرعتك…"
+
+msgid "This is a demo response. The dashboard uses illustrative values. Connect the farm data and AI service to generate recommendations for your real farm."
+msgstr "هذه إجابة تجريبية. تستخدم لوحة التحكم قيمًا توضيحية. اربط بيانات المزرعة وخدمة الذكاء الاصطناعي للحصول على توصيات خاصة بمزرعتك الفعلية."
+
+msgid "The assistant could not respond. Please try again."
+msgstr "تعذّر على المساعد الرد. يرجى المحاولة مرة أخرى."
+
+msgid "Demo mode: these example values are illustrative, not real farm measurements or agronomic advice."
+msgstr "الوضع التجريبي: هذه القيم توضيحية وليست قياسات فعلية للمزرعة أو توصيات زراعية معتمدة."
+
+msgid "Analyzing your farm"
+msgstr "جارٍ تحليل مزرعتك"
+
+msgid "Farm statistics"
+msgstr "إحصائيات المزرعة"
+
+msgid "Net profit"
+msgstr "صافي الربح"
+
+msgid "JOD"
+msgstr "د.أ"
+
+msgid "vs. current plan"
+msgstr "مقارنة بالخطة الحالية"
+
+msgid "Water consumption"
+msgstr "استهلاك المياه"
+
+msgid "Water budget used"
+msgstr "نسبة ميزانية المياه المستخدمة"
+
+msgid "Water cost"
+msgstr "تكلفة المياه"
+
+msgid "Total costs"
+msgstr "إجمالي التكاليف"
+
+msgid "مزارع JO — Smart Assistant"
+msgstr "مزارع JO — المساعد الذكي"
+
+msgid "Ask about your farm and get recommendations based on its data."
+msgstr "اسأل عن مزرعتك واحصل على توصيات مبنية على بياناتها."
+
+msgid "Ready"
+msgstr "جاهز"
+
+msgid "Chat messages"
+msgstr "رسائل المحادثة"
+
+msgid "Farm assistant"
+msgstr "المساعد الزراعي"
+
+msgid "Hello! I can help you understand your farm data and compare practical options to improve profit and reduce water use."
+msgstr "مرحبًا! يمكنني مساعدتك في فهم بيانات مزرعتك ومقارنة الخيارات العملية لزيادة الأرباح وتقليل استهلاك المياه."
+
+msgid "Review farm costs and water usage"
+msgstr "مراجعة تكاليف المزرعة واستهلاك المياه"
+
+msgid "Compare the current and recommended plans"
+msgstr "مقارنة الخطة الحالية بالخطة المقترحة"
+
+msgid "Explain each recommendation in simple language"
+msgstr "شرح كل توصية بلغة بسيطة"
+
+msgid "What would you like to know about your farm?"
+msgstr "ما الذي تود معرفته عن مزرعتك؟"
+
+msgid "Example conversation · Demo data"
+msgstr "محادثة توضيحية · بيانات تجريبية"
+
+msgid "You"
+msgstr "أنت"
+
+msgid "Can you help me reduce water use and improve farm profit?"
+msgstr "هل يمكنك مساعدتي في تقليل استهلاك المياه وزيادة أرباح المزرعة؟"
+
+msgid "Illustrative recommendation"
+msgstr "توصية توضيحية"
+
+msgid "The sample comparison shows a possible alternative plan. These values are illustrative and should not be treated as a real irrigation recommendation until your farm data and a suitable crop model are connected."
+msgstr "تعرض المقارنة التجريبية خطة بديلة محتملة. هذه القيم توضيحية، ولا ينبغي اعتبارها توصية ري فعلية قبل ربط بيانات مزرعتك ونموذج مناسب للمحصول."
+
+msgid "Recommended plan (demo)"
+msgstr "الخطة المقترحة (تجريبية)"
+
+msgid "Needs validation"
+msgstr "تحتاج إلى التحقق"
+
+msgid "Suggested questions"
+msgstr "أسئلة مقترحة"
+
+msgid "Explain the recommended plan."
+msgstr "اشرح الخطة المقترحة."
+
+msgid "What information is missing from my farm profile?"
+msgstr "ما المعلومات الناقصة في ملف مزرعتي؟"
+
+msgid "Compare the current and recommended plans."
+msgstr "قارن بين الخطة الحالية والخطة المقترحة."
+
+msgid "Explain the recommended plan"
+msgstr "اشرح الخطة المقترحة"
+
+msgid "What data is missing?"
+msgstr "ما البيانات الناقصة؟"
+
+msgid "Compare both plans"
+msgstr "قارن بين الخطتين"
+
+msgid "Write your question"
+msgstr "اكتب سؤالك"
+
+msgid "Write your question about the farm…"
+msgstr "اكتب سؤالك عن المزرعة…"
+
+msgid "Send message"
+msgstr "إرسال الرسالة"
+
+msgid "Your recommendations should be checked against reliable farm data and local agricultural guidance."
+msgstr "ينبغي التحقق من التوصيات باستخدام بيانات موثوقة للمزرعة والإرشادات الزراعية المحلية."
+
+msgid "Farm dashboard and plan comparison"
+msgstr "لوحة تحكم المزرعة ومقارنة الخطط"
+
+msgid "Plan comparison"
+msgstr "مقارنة الخطط"
+
+msgid "Current plan compared with the suggested plan"
+msgstr "مقارنة الخطة الحالية بالخطة المقترحة"
+
+msgid "Demo data"
+msgstr "بيانات تجريبية"
+
+msgid "Current versus proposed plan metrics"
+msgstr "مؤشرات الخطة الحالية مقارنة بالخطة المقترحة"
+
+msgid "Metric"
+msgstr "المؤشر"
+
+msgid "Current"
+msgstr "الحالي"
+
+msgid "Proposed"
+msgstr "المقترح"
+
+msgid "Change"
+msgstr "التغيير"
+
+msgid "Water use (m³)"
+msgstr "استهلاك المياه (م³)"
+
+msgid "Water cost (JOD)"
+msgstr "تكلفة المياه (د.أ)"
+
+msgid "Total costs (JOD)"
+msgstr "إجمالي التكاليف (د.أ)"
+
+msgid "Key metrics"
+msgstr "المؤشرات الرئيسية"
+
+msgid "Relative comparison within each metric"
+msgstr "مقارنة نسبية لكل مؤشر"
+
+msgid "Bar chart comparing profit, water use and water cost for current and proposed plans"
+msgstr "مخطط أعمدة يقارن الأرباح واستهلاك المياه وتكلفتها بين الخطتين الحالية والمقترحة"
+
+msgid "Net profit (JOD)"
+msgstr "صافي الربح (د.أ)"
+
+msgid "These illustrative figures are for interface demonstration only. Connect verified farm records and a suitable crop or irrigation model before using any recommendation for real farm decisions."
+msgstr "هذه الأرقام التوضيحية مخصصة لعرض الواجهة فقط. اربط سجلات موثقة للمزرعة ونموذجًا مناسبًا للمحصول أو الري قبل استخدام أي توصية لاتخاذ قرارات زراعية فعلية."
+
+msgid "Dashboard preview"
+msgstr "معاينة لوحة التحكم"
+
+msgid "Values shown are illustrative demo data"
+msgstr "القيم المعروضة بيانات تجريبية توضيحية"
+
+msgid "Just now"
+msgstr "الآن"
+
+msgid "Demo response"
+msgstr "إجابة تجريبية"
+
+msgid "Write a question first."
+msgstr "اكتب سؤالًا أولًا."
+
+msgid "The chat service is not connected yet. Configure the endpoint to use live AI."
+msgstr "خدمة المحادثة غير متصلة بعد. اضبط عنوان واجهة الخدمة لاستخدام الذكاء الاصطناعي الفعلي."

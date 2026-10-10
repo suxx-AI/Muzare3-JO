@@ -1,0 +1,7 @@
+{% extends 'dashboard/setup_base.html' %}
+{% block setup_content %}
+<div class="section-title"><span class="icon-tile"><svg class="icon"><use href="#i-check"/></svg></span><div><h2>مزرعتك جاهزة للمحادثة</h2><p>راجع المعلومات، ثم ابدأ مع مزارع جو.</p></div></div>
+<div class="setup-summary" id="setupSummary"></div>
+<div class="info-note"><svg class="icon"><use href="#i-spark"/></svg><p>تظهر الخطة والمؤشرات بعد التحليل الفعلي. لا تُعرض تقديرات جاهزة أو نتائج افتراضية.</p></div>
+<div class="setup-actions"><a class="secondary-button" href="{% url 'dashboard:crops' %}">رجوع</a><button class="primary-button" type="button" id="startButton">ابدأ مع مزارع جو <svg class="icon"><use href="#i-arrow"/></svg></button></div>
+{% endblock %}

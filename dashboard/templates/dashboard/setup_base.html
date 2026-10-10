@@ -1,0 +1,17 @@
+{% extends 'dashboard/base.html' %}{% load static %}
+{% block content %}
+<main class="onboarding" id="setupApp" data-start="{% url 'dashboard:start' %}" data-home="{% url 'dashboard:home' %}" data-index="{% url 'dashboard:index' %}" data-crops="{% url 'dashboard:crops' %}" data-ready="{% url 'dashboard:ready' %}">
+  <div class="setup-intro"><div class="eyebrow">قرار أفضل يبدأ ببياناتك</div><h1>أرضك. ميزانيتك. مياهك.<br><span>قرار أذكى.</span></h1><p>أضف معلومات مزرعتك مرة واحدة، لنستخدمها في محادثتك وخطتك.</p></div>
+  <section class="panel setup-card">
+    <nav class="steps" aria-label="خطوات إعداد المزرعة">
+      <a href="{% url 'dashboard:index' %}" class="step {% if step == 1 %}active{% elif step > 1 %}complete{% endif %}"><span>١</span>معلومات المزرعة</a>
+      <i></i><a href="{% url 'dashboard:crops' %}" class="step {% if step == 2 %}active{% elif step > 2 %}complete{% endif %}"><span>٢</span>المحاصيل والهدف</a>
+      <i></i><a href="{% url 'dashboard:ready' %}" class="step {% if step == 3 %}active{% endif %}"><span>٣</span>جاهز للقرار</a>
+    </nav>
+    {% block setup_content %}{% endblock %}
+    <div class="form-error" id="setupError" role="alert" hidden></div>
+  </section>
+</main>
+{{ saved_setup|json_script:'saved-setup' }}
+{% endblock %}
+{% block scripts %}<script type="module" src="{% static 'js/main.js' %}"></script>{% endblock %}

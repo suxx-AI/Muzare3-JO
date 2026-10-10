@@ -1,0 +1,79 @@
+{
+  "بندورة": {
+    "water_m3_per_dunum": 390,
+    "yield_kg_per_dunum": 4824,
+    "historical_operating_cost_jod_per_dunum": 348
+  },
+
+  "خيار": {
+    "water_m3_per_dunum": 244,
+    "yield_kg_per_dunum": 9057,
+    "historical_operating_cost_jod_per_dunum": 1145
+  },
+
+  "بطاطا": {
+    "water_m3_per_dunum": 320,
+    "yield_kg_per_dunum": 2755,
+    "historical_operating_cost_jod_per_dunum": 415
+  },
+
+  "كوسا": {
+    "water_m3_per_dunum": 273,
+    "yield_kg_per_dunum": 1545,
+    "historical_operating_cost_jod_per_dunum": 239
+  },
+
+  "باذنجان": {
+    "water_m3_per_dunum": 313,
+    "yield_kg_per_dunum": 3337,
+    "historical_operating_cost_jod_per_dunum": 329
+  },
+
+  "زهرة": {
+    "water_m3_per_dunum": 308,
+    "yield_kg_per_dunum": 2785,
+    "historical_operating_cost_jod_per_dunum": 287
+  },
+
+  "بصل": {
+    "water_m3_per_dunum": 469,
+    "yield_kg_per_dunum": 2470,
+    "historical_operating_cost_jod_per_dunum": 396
+  },
+
+  "ثوم": {
+    "water_m3_per_dunum": 290,
+    "yield_kg_per_dunum": 3738,
+    "historical_operating_cost_jod_per_dunum": 1134
+  },
+
+  "فلفل": {
+    "water_m3_per_dunum": 261,
+    "yield_kg_per_dunum": 4206,
+    "historical_operating_cost_jod_per_dunum": 681
+  },
+
+  "فلفل حار": {
+    "water_m3_per_dunum": 277,
+    "yield_kg_per_dunum": 1818,
+    "historical_operating_cost_jod_per_dunum": 95
+  },
+
+  "ليمون محلي": {
+    "water_m3_per_dunum": 949,
+    "yield_kg_per_dunum": 1063,
+    "historical_operating_cost_jod_per_dunum": 279
+  },
+
+  "موز بلدي": {
+    "water_m3_per_dunum": 1376,
+    "yield_kg_per_dunum": 2694,
+    "historical_operating_cost_jod_per_dunum": 652
+  },
+
+  "تفاح محلي": {
+    "water_m3_per_dunum": 701,
+    "yield_kg_per_dunum": 1524,
+    "historical_operating_cost_jod_per_dunum": 203
+  }
+}

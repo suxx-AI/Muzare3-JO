@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.venv/
+frontend/node_modules/
+frontend/dist/
+.runtime/
+db.sqlite3
+db.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+*.log
+.vscode/
+artifacts/
+frontend/demo-preview.png

@@ -1,0 +1,7 @@
+# Tested with the existing Python 3.10 installation. Install before the demo.
+Django==5.2.18
+langgraph==1.2.11
+langchain-core==1.6.1
+langchain-google-genai==4.3.4
+python-dotenv==1.2.3
+requests==2.34.2

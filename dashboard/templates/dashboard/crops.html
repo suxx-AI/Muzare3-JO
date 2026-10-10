@@ -1,0 +1,13 @@
+{% extends 'dashboard/setup_base.html' %}
+{% block setup_content %}
+<div class="section-title"><span class="icon-tile"><svg class="icon"><use href="#i-chart"/></svg></span><div><h2>ما القرار الذي تبحث عنه؟</h2><p>حدّد هدفك، واختر محاصيل إن كانت لديك خيارات محددة.</p></div></div>
+<form id="cropsForm">
+  <fieldset class="goal-options"><legend>هدف التخطيط</legend>
+    <label class="goal-card"><input type="radio" name="goal" value="balanced" checked><svg class="icon"><use href="#i-spark"/></svg><strong>خطة متوازنة</strong><span>توازن بين الهامش وتوفير المياه</span></label>
+    <label class="goal-card"><input type="radio" name="goal" value="margin"><svg class="icon"><use href="#i-chart"/></svg><strong>أعلى هامش تقديري</strong><span>مقارنة الخطط حسب الهامش المالي</span></label>
+    <label class="goal-card"><input type="radio" name="goal" value="water_efficiency"><svg class="icon"><use href="#i-water"/></svg><strong>أفضل كفاءة مياه</strong><span>الهامش التقديري لكل متر مكعب</span></label>
+  </fieldset>
+  <fieldset class="crop-options"><legend>المحاصيل محل المقارنة <small>اختياري</small></legend><p class="muted small">اترك الاختيار فارغاً ليقارن المحسّن المحاصيل المتاحة. قد يستبعد المحاصيل الدائمة أو غير المكتملة البيانات.</p><div class="crop-chips">{% for crop in crop_options %}<label class="crop-choice"><input type="checkbox" name="crop" value="{{ crop }}"><svg class="icon"><use href="#i-leaf"/></svg>{{ crop }}</label>{% endfor %}</div></fieldset>
+  <div class="setup-actions"><a class="secondary-button" href="{% url 'dashboard:index' %}">رجوع</a><button class="primary-button" type="submit">مراجعة المعلومات <svg class="icon"><use href="#i-arrow"/></svg></button></div>
+</form>
+{% endblock %}

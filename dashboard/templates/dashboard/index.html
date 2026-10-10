@@ -1,0 +1,14 @@
+{% extends 'dashboard/setup_base.html' %}
+{% block setup_content %}
+<div class="section-title"><span class="icon-tile"><svg class="icon"><use href="#i-leaf"/></svg></span><div><h2>خلّينا نتعرّف على مزرعتك</h2><p>معلوماتك هي نقطة البداية للتحليل.</p></div></div>
+<form id="farmForm" class="setup-form">
+  <label class="field wide">موقع المزرعة<select id="farmLocation" required><option value="">اختر المنطقة</option>{% for location in locations %}<option value="{{ location }}">{{ location }}</option>{% endfor %}</select></label>
+  <div class="farm-fields">
+    <label class="field">مساحة الأرض<div class="input-unit"><input id="land" name="land" type="number" min="10" step="10" placeholder="المساحة" required><span>دونم</span></div><small>التحسين الحالي يستخدم مضاعفات ١٠ دونم.</small></label>
+    <label class="field">ميزانية الموسم<div class="input-unit"><input id="budget" name="budget" type="number" min="0.01" step="any" placeholder="الميزانية" required><span>دينار</span></div></label>
+    <label class="field">المياه المتاحة (اختياري)<div class="input-unit"><input id="water" name="water" type="number" min="0" step="any" placeholder="اتركها فارغة لحساب احتياج الخطة"><span>م³</span></div><small>أدخل الكمية إذا كانت لديك مياه محددة متاحة.</small></label>
+  </div>
+  <div class="info-note"><svg class="icon"><use href="#i-water"/></svg><p>إذا تركت المياه فارغة، سيعرض مزارع جو احتياج الخطة المحسوب. وإذا أدخلت كمية، تُرسل للمحادثة كمعلومة مرجعية؛ لا تفرض أداة التحسين الحالية سقفاً مائياً.</p></div>
+  <div class="setup-actions"><span>تعديل البيانات يبدأ محادثة جديدة بخطة جديدة</span><button class="primary-button" type="submit">التالي <svg class="icon"><use href="#i-arrow"/></svg></button></div>
+</form>
+{% endblock %}

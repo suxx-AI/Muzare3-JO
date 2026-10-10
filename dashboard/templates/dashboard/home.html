@@ -1,0 +1,47 @@
+{% extends 'dashboard/base.html' %}{% load static %}
+{% block content %}
+<main id="decisionApp" data-chat="{% url 'dashboard:farm-chat' %}" data-reset="{% url 'dashboard:reset-chat' %}" data-health="{% url 'health' %}">
+  <section class="dashboard-heading"><div><span class="eyebrow">مساحة القرار الزراعي</span><h1>أرضك. ميزانيتك. مياهك. <em>قرار أذكى.</em></h1><p>اسأل مزارع جو عن أفضل قرار زراعي لمزرعتك</p></div><a class="text-button" href="{% url 'dashboard:index' %}"><svg class="icon"><use href="#i-edit"/></svg>تعديل بيانات المزرعة</a></section>
+  <div class="demo-layout">
+    <nav class="app-navigation" aria-label="التنقل الرئيسي">
+      <a class="nav-item active" href="#chatPanel"><svg class="icon"><use href="#i-spark"/></svg>المحادثة</a>
+      <a class="nav-item" href="#cropPlan"><svg class="icon"><use href="#i-chart"/></svg>خطة المزرعة</a>
+      <a class="nav-item" href="#comparisonPanel"><svg class="icon"><use href="#i-chart"/></svg>مقارنة الخطط</a>
+      <a class="nav-item" href="#marketPanel"><svg class="icon"><use href="#i-market"/></svg>الأسواق</a>
+      <a class="nav-item" href="{% url 'dashboard:index' %}"><svg class="icon"><use href="#i-edit"/></svg>إعداد المزرعة</a>
+      <div class="nav-caption">بياناتك.<br>قرارك القادم.</div>
+    </nav>
+  <div class="workspace">
+    <section class="panel chat-panel" id="chatPanel">
+      <header class="panel-heading"><div class="heading-icon"><svg class="icon"><use href="#i-spark"/></svg></div><div><h2>المحادثة الذكية</h2><p>من سؤال واحد إلى خطة قابلة للمقارنة</p></div><button class="small-button" id="resetChat" type="button">محادثة جديدة</button></header>
+      <div class="messages" id="messages" role="log" aria-live="polite"><div class="chat-welcome" id="chatWelcome"><span class="welcome-symbol"><svg class="icon"><use href="#i-leaf"/></svg></span><h3>خلّينا نخطط لموسمك.</h3><p>بيانات مزرعتك جاهزة. اسأل عن توزيع المحاصيل، كفاءة المياه، أو مقارنة أسعار الأسواق.</p><div class="welcome-detail">أرض + ميزانية + مياه + أسواق <span>← قرار أوضح</span></div></div></div>
+      <div id="analysisActivity" class="analysis-activity" hidden role="status"><div class="analysis-title"><span class="pulse-dot"></span>مزارع جو يحلل خطتك…</div><div class="activity-stages"><span>تحليل الطلب</span><span>مراجعة بيانات السوق</span><span>مراجعة بيانات الطقس</span><span>مقارنة المحاصيل</span><span>تشغيل أداة التحسين</span></div><small>تسلسل توضيحي أثناء الانتظار، وليس تأكيداً لتنفيذ الأدوات.</small></div>
+      <div class="chat-error" id="chatError" role="alert" hidden></div>
+      <div class="prompt-chips"><button type="button" data-prompt="شو أفضل محصول أزرع؟">شو أفضل محصول أزرع؟</button><button type="button" data-prompt="وازنلي بين الربح واستهلاك المياه">وازنلي بين الربح واستهلاك المياه</button><button type="button" data-prompt="قارنلي بين سوق عمّان وإربد">قارنلي بين سوق عمّان وإربد</button></div>
+      <form id="chatForm" class="composer"><label class="sr-only" for="messageInput">رسالتك إلى مزارع جو</label><textarea id="messageInput" rows="2" placeholder="اسأل عن قرارك الزراعي القادم…" required></textarea><button id="sendButton" type="submit" aria-label="إرسال الرسالة"><svg class="icon"><use href="#i-send"/></svg></button></form>
+      <div class="chat-footnote">المحادثة محفوظة خلال تشغيل الخادم · التقديرات ليست صافي ربح مضموناً</div>
+    </section>
+    <section class="decision-panel" aria-label="لوحة القرار المباشر">
+      <article class="panel farm-overview-panel"><div class="section-heading"><h3><svg class="icon"><use href="#i-leaf"/></svg>نظرة على مزرعتك</h3><a class="overview-edit" href="{% url 'dashboard:index' %}"><svg class="icon"><use href="#i-edit"/></svg>تعديل</a></div><div class="farm-strip" id="farmOverview" aria-label="بيانات المزرعة"></div></article>
+      <div class="decision-heading"><div><span class="eyebrow">رؤية مبنية على البيانات</span><h2>لوحة القرار المباشر</h2></div><label class="plan-select"><span class="sr-only">الخطة المعروضة</span><select id="planSelector"><option value="balanced_plan">الخطة المتوازنة</option><option value="highest_margin_plan">أعلى هامش تقديري</option><option value="best_water_efficiency_plan">أفضل كفاءة مياه</option></select></label></div>
+      <div class="dashboard-notice" id="dashboardNotice">اطلب تحليل خطة ليظهر توزيع المحاصيل والمؤشرات المحسوبة.</div>
+      <div class="kpi-grid" id="kpiGrid">
+        <article class="kpi-card kpi-primary"><svg class="icon"><use href="#i-chart"/></svg><span>الهامش المالي التقديري</span><strong data-metric="margin">لم يُحسب بعد</strong><small>دينار أردني</small></article>
+        <article class="kpi-card"><svg class="icon"><use href="#i-wallet"/></svg><span>التكلفة الإجمالية</span><strong data-metric="cost">لم يُحسب بعد</strong><small>دينار أردني</small></article>
+        <article class="kpi-card"><svg class="icon"><use href="#i-wallet"/></svg><span>الميزانية المتبقية</span><strong data-metric="remaining">لم يُحسب بعد</strong><small>دينار أردني</small></article>
+        <article class="kpi-card"><svg class="icon"><use href="#i-water"/></svg><span>استهلاك المياه</span><strong data-metric="water">لم يُحسب بعد</strong><small>متر مكعب</small></article>
+        <article class="kpi-card"><svg class="icon"><use href="#i-leaf"/></svg><span>كفاءة المياه</span><strong data-metric="efficiency">لم يُحسب بعد</strong><small>دينار / م³</small></article>
+      </div>
+      <div class="chart-grid"><article class="panel chart-panel"><h3>توزيع الأرض <small>دونم</small></h3><div id="allocationChart" class="bar-chart"></div></article><article class="panel chart-panel"><h3>استهلاك المياه <small>م³</small></h3><div id="waterChart" class="bar-chart"></div></article><article class="panel chart-panel"><h3>الإنتاج المتوقع <small>كغ</small></h3><div id="productionChart" class="bar-chart"></div></article></div>
+      <article class="panel crop-panel" id="cropPlan"><div class="section-heading"><h3>خطة المحاصيل</h3><span id="planDetail" class="muted">توزيع محسوب حسب ميزانيتك</span></div><div id="cropRows" class="crop-rows"></div></article>
+      <article class="panel comparison-panel" id="comparisonPanel"><div class="section-heading"><h3>اختيار أوضح بين خطتين</h3><span class="muted">هامش · مياه · تكلفة</span></div><div id="planComparison" class="comparison-grid"></div></article>
+      <article class="panel market-panel" id="marketPanel"><div class="section-heading"><h3><svg class="icon"><use href="#i-market"/></svg>قراءة السوق</h3><span class="muted">أسعار تمثيلية · دينار / كغ</span></div><div class="table-scroll"><table><thead><tr><th>المحصول</th><th>سوق عمّان</th><th>سوق إربد</th><th>المفضل سعرياً</th></tr></thead><tbody id="marketRows"></tbody></table></div><p class="data-note" id="marketDates"></p><p class="data-note">مقارنة سعرية من البيانات المتاحة؛ لا تتضمن توزيع المبيعات أو النقل أو الطلب.</p></article>
+      <article class="panel weather-panel" id="weatherPanel" hidden><div class="section-heading"><h3>الطقس المرجعي</h3><span class="muted">آخر بيانات أعادتها أداة الطقس</span></div><div id="weatherRows"></div></article>
+      <p class="dashboard-disclaimer">المياه المتاحة معلومة مرجعية للمحادثة؛ أداة التحسين الحالية لا تفرض سقفاً مائياً. الهامش تقدير تخطيطي وفق الأسعار والتكاليف المرجعية.</p>
+    </section>
+  </div>
+  </div>
+</main>
+{{ initial_state|json_script:"initial-state" }}
+{% endblock %}
+{% block scripts %}<script src="{% static 'vendor/marked.umd.js' %}"></script><script src="{% static 'vendor/purify.min.js' %}"></script><script type="module" src="{% static 'js/dashboard.js' %}"></script>{% endblock %}
